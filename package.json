@@ -1,15 +1,18 @@
 {
-    "name": "javascript-modules",
-    "version": "0.0.1",
-    "description": "Javascript Modules Demo",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "http-server"
-    },
-    "author": "Aditya Bhandari",
-    "license": "ISC",
-    "devDependencies": {
-        "http-server": "^0.9.0"
-    }
+  "name": "javascript-modules",
+  "version": "0.0.1",
+  "description": "Javascript Modules Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Aditya Bhandari",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.2"
+  }
 }

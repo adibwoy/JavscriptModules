@@ -1,4 +1,4 @@
-var game = function() {
+define(["./player", "./scoreboard"], function(player, scoreboard){
 
     // private members
     var factorElement = document.getElementById('factor');
@@ -51,7 +51,6 @@ var game = function() {
         };
 
         // add the result and update the scoreboard
-        var scoreboard = new Scoreboard();
         scoreboard.addResult(result);
         scoreboard.updateScoreboard();
 
@@ -74,5 +73,4 @@ var game = function() {
         setProblemCount: setProblemCount,
         getProblemCount: getProblemCount
     };
-
-}();
+});
