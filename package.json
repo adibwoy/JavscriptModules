@@ -10,6 +10,8 @@
   "author": "Aditya Bhandari",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
     "http-server": "^0.9.0"
   },
   "dependencies": {

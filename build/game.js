@@ -1,13 +1,28 @@
-import { getName as getPlayerName, logPlayer } from "./player.js";
-import * as scoreboard from "./scoreboard.js";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.printGame = printGame;
+exports.calculateScore = calculateScore;
+exports.setProblemCount = setProblemCount;
+exports.getProblemCount = getProblemCount;
+
+var _player = require("./player.js");
+
+var _scoreboard = require("./scoreboard.js");
+
+var scoreboard = _interopRequireWildcard(_scoreboard);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // private members
 var factorElement = document.getElementById('factor');
 var problemsPerGame = 3; // set default value
 
-export function printGame() {
+function printGame() {
 
-    logPlayer();
+    (0, _player.logPlayer)();
 
     // determine the number of problems to show
     setProblemCount(document.getElementById('problemCount').value);
@@ -30,7 +45,7 @@ export function printGame() {
     document.getElementById('calculate').removeAttribute('disabled');
 }
 
-export function calculateScore() {
+function calculateScore() {
 
     var problemsInGame = getProblemCount();
     var score = 0;
@@ -38,14 +53,14 @@ export function calculateScore() {
     // loop through the text boxes and calculate the number that are correct
     for (var i = 1; i <= problemsInGame; i++) {
         var answer = document.getElementById('answer' + i).value;
-        if(i * factorElement.value == answer) {
+        if (i * factorElement.value == answer) {
             score++;
         }
     }
 
     // create a new result object to pass to the scoreboard
     var result = {
-        name: getPlayerName(),
+        name: (0, _player.getName)(),
         score: score,
         problems: problemsInGame,
         factor: factorElement.value
@@ -59,10 +74,10 @@ export function calculateScore() {
     document.getElementById('calculate').setAttribute('disabled', 'true');
 }
 
-export function setProblemCount(newProblemCount) {
+function setProblemCount(newProblemCount) {
     problemsPerGame = newProblemCount;
 }
 
-export function getProblemCount() {
+function getProblemCount() {
     return problemsPerGame;
 }
